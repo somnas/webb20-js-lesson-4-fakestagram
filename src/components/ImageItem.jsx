@@ -1,16 +1,16 @@
 import React, {useState} from 'react'
+import Comments from './Comments'
 
 export default function ImageItem({imageItem}) {
-  const [newCounter, setNewCounter] = useState(0)
-  
+  const [likes, setLikes] = useState(imageItem.likes)
+
   function handleOnClick() {
-    setNewCounter(newCounter + 1)
+    setLikes(likes + 1)
   }
 
   return (
-    <div className="col-md-6">
+    <div className="col-md-6 mb-5">
       <img
-        onClick={handleOnClick} 
         className="img-fluid" 
         src={imageItem.imageURL} 
         alt={imageItem.description}
@@ -19,12 +19,10 @@ export default function ImageItem({imageItem}) {
       <p>
         {imageItem.description}
       </p>
-      <p>
-        Likes: {imageItem.likes}
-      </p>
-      <p>
-        New Counter: {newCounter}
-      </p>
+      <div onClick={handleOnClick} >
+        ♥️ {likes}
+      </div>
+      <Comments />
     </div>
   )
 }
