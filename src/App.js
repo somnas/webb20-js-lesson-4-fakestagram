@@ -20,6 +20,7 @@ function App() {
         <div className="col-md-12">
           <ul className="nav">
             <NavLinkItem to="/" text="Home" />
+            <NavLinkItem to="/instagram" text="Instagram" />
             <NavLinkItem to="/about" text="About" />
             <NavLinkItem to="/contact" text="Contact" />
           </ul>
